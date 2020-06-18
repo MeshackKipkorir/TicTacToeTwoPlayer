@@ -89,7 +89,29 @@ def main():
         if isBoardFull(board):
             print('Tie game !')
 
+#print board
+def printBoard(board):
+    print('   |   |   ')
+    print(' ' + board[1] + ' | ' + board[2] + ' | ' + board[3])
+    print('   |   |   ')
+    print('------------')
+    print('   |   |   ')
+    print(' ' + board[4] + ' | ' + board[5] + ' | ' + board[6])
+    print('   |   |   ')
+    print('------------')
+    print('   |   |   ')
+    print(' ' + board[7] + ' | ' + board[8] + ' | ' + board[9])
+    print('   |   |   ')
 
+
+while True:
+    x = raw_input('Do you wanna play again ?(y/n) ')
+    if x.lower() == 'y':
+        board = [' ' * 10]
+        print('------------------------')
+        main()
+    else:
+        break
 
             
             
