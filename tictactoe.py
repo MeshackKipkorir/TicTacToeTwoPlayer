@@ -27,6 +27,23 @@ def isWinner(board,letter):
             (board[1] == board[5] == board[9] == letter) or
             (board[3] == board[5] == board[7] == letter))
     
+ def playerOneMove():
+    print('****Player One Turn****')
+    run = True 
+    while run:
+        move = raw_input('Enter a number btw 1 and 9 to place your move')
+        move = int(move)
+        try:
+            if 0 < move < 10:
+                if not isSpaceFree(move):
+                    run = False
+                    inserLetter('X', move)
+                else:
+                    print('space is occupied, try another position')
+            else:
+                print('Enter a number between 1 and 9')
+        except:
+            print('Enter a number')
 
 
    
