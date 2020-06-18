@@ -47,6 +47,25 @@ def playerOneMove():
             print('Enter a number')
             
  #player two move
+def playertwoMove():
+    print('****Player Two Turn****')
+    run = True
+    while run:
+        move = raw_input('Enter a position you want to play (1-9) ')
+        move = int(move)
+        try:
+            if 0 < move < 10:
+                if spaceIsFree(move):
+                    run = False
+                    insertLetter('O', move)
+                else:
+                    print('that space is taken. Try another move')
+            else:
+                print('Enter a number between 1 and 9')
+        except:
+            print('Please enter a number')
+
+
  
 def main():
     print('*****Welcome to the game !!!')
