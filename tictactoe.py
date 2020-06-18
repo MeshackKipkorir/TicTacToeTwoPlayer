@@ -1,4 +1,4 @@
-board = [' ' * 10] #board spaces
+board = [' ' for x in range(10)] #board spaces
 
 #insert letter to board
 def insertLetter(letter,position):
@@ -30,21 +30,21 @@ def isWinner(board,letter):
 #player one move
 def playerOneMove():
     print('****Player One Turn****')
-    run = True 
+    run = True
     while run:
-        move = raw_input('Enter a number btw 1 and 9 to place your move')
+        move = raw_input('Enter a position you want to play (1 - 9) ')
         move = int(move)
         try:
             if 0 < move < 10:
-                if not isSpaceFree(move):
+                if isSpaceFree(move):
                     run = False
-                    inserLetter('X', move)
+                    insertLetter('X', move)
                 else:
-                    print('space is occupied, try another position')
+                    print(' That space is taken, Try another move')
             else:
                 print('Enter a number between 1 and 9')
         except:
-            print('Enter a number')
+            print('please enter a number ')
             
  #player two move
 def playertwoMove():
@@ -55,7 +55,7 @@ def playertwoMove():
         move = int(move)
         try:
             if 0 < move < 10:
-                if spaceIsFree(move):
+                if isSpaceFree(move):
                     run = False
                     insertLetter('O', move)
                 else:
@@ -107,7 +107,7 @@ def printBoard(board):
 while True:
     x = raw_input('Do you wanna play again ?(y/n) ')
     if x.lower() == 'y':
-        board = [' ' * 10]
+        board = [' ' for x in range(10)]
         print('------------------------')
         main()
     else:
